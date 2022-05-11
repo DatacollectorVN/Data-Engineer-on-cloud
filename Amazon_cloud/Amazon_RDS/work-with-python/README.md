@@ -47,7 +47,7 @@ Your Amazon RDS database is currently using the *default* `security group`. Ther
 - Modify the *default* `security group`.
 - Or you can create a new `security group` (as your have done), then go to the RDS console, click on your database, then choose `Instance actions` -> `Modify` and modify the `security groups` that are associated with the DB instance (add the new `security group`, remove the default `security group`).
 
-### Getting start
+# 2. Getting start
 ```bash
 conda activate amazoncloud
 python 1.connect.py
