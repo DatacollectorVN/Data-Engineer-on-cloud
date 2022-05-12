@@ -35,7 +35,7 @@ Read more here.
 
 `Security groups` are set up within the `EC2` service, so to create a new `security group`, go to the `EC2` service, then click `Security Groups` on the left, under `Network & Security`. Then click create `security group`. 
 
-Create a name of `security group` in our case is **RDS-python** and add the `inbound rule` with configuration like below:
+Create a name of `security group` in our case is **RDS-python** and add the `inbound rule` with configurations like below:
 
 <p align = "center">
     <img src="https://github.com/DatacollectorVN/Data-Engineer-on-cloud/blob/master/public-imgs/inbound_rules_sec_group.png?raw=true" alt="drawing"/>

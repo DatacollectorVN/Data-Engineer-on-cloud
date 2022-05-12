@@ -43,9 +43,13 @@ A `cluster` contains one or more databases. User data is stored on the compute n
 </p>
 
 ##  2. Getting start
+### 2.0. Setup virtual environment
 Create Miniconda enviroment and install requirement packages
 ```bash
 conda create -n amazoncloud python=3.8 -y
 conda activate amazoncloud
 pip install -r requirements.txt
 ```
+
+### 2.1. Amazon RDS
+Follow `Amazon_RDS`
