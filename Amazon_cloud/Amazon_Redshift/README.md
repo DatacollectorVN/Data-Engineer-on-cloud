@@ -36,3 +36,48 @@ Follow **Getting start: Upload file into `bucket` in `Amazon S3`** in `Amazon_S3
 
 ### 3.2. Setup cluster in `Amazon Redshift`
 Follow **2.1. Step 1: Create cluster** without create `sample data`.
+
+### 3.3. Create and connect new database in `Amazon Redshift` by `Query editor`
+Use `CREATE DATABASE` syntax, read [here](https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_DATABASE.html).
+
+```bash
+CREATE DATABASE ticket 
+WITH OWNER nathan;
+```
+
+Then choose `ticket` tag in `Database`
+
+### 3.4. Load data from `Amazon S3` to `Amazon Redshift` via `COPY` command
+*Note:* We recommend using the `COPY` command to load large datasets into `Amazon Redshift` from `Amazon S3` or `Amazon DynamoDB`. 
+
+#### Get permission to load data from `Amazon S3`.
+Read [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html) for more understanding.
+
+*Example:*
+```bash
+{
+    "Version": "2012-10-17",
+    "Id": "ExamplePolicy01",
+    "Statement": [
+        {
+            "Sid": "ExampleStatement01",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::123456789012:user/Dave"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:GetBucketLocation",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::awsexamplebucket1/*",
+                "arn:aws:s3:::awsexamplebucket1"
+            ]
+        }
+    ]
+}
+```
+
+#### Load data from `Amazon S3`.
+Copy SQL command in `load_data_from_amazons3.sql` in `Query editor`.
